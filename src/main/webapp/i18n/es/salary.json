@@ -1,0 +1,25 @@
+{
+  "testDigLabApp": {
+    "salary": {
+      "home": {
+        "title": "Salarios",
+        "createLabel": "Crear nuevo salario",
+        "createOrEditLabel": "Crear o editar salario",
+        "notFound": "Ningún salario encontrado"
+      },
+      "created": "Un nuevo salario ha sido creado con el identificador {{ param }}",
+      "updated": "Un salario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un salario ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el salario {{ id }}?"
+      },
+      "detail": {
+        "title": "salario"
+      },
+      "amount": "Valor",
+      "fromDate": "Desde",
+      "toDate": "Hasta",
+      "employee": "Empleado"
+    }
+  }
+}

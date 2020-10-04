@@ -1,0 +1,75 @@
+/**
+ * The employee entity.
+ * @author juan.caicedo
+ */
+entity Employee {
+    
+    names String required maxlength(50)
+    lastNames String required maxlength(50)
+    gender String required maxlength(1)
+    birthDate ZonedDateTime required
+    hireDate ZonedDateTime required
+}
+
+/**
+ * The Department entity.
+ * @author juan.caicedo
+ */
+entity Department {
+    
+    name String required
+}
+
+/**
+ * The Salary entity.
+ * @author juan.caicedo
+ */
+entity Salary {
+    
+    amount Integer required
+    fromDate ZonedDateTime required
+    toDate ZonedDateTime 
+}
+
+/**
+ * The Title entity.
+ * @author juan.caicedo
+ */
+entity Title {
+    
+    title String required maxlength(50)
+    fromDate ZonedDateTime required
+    toDate ZonedDateTime 
+}
+
+/**
+ * The DepartmentEmployee entity.
+ * @author juan.caicedo
+ */
+entity DepartmentEmployee {
+    
+    fromDate ZonedDateTime required
+    toDate ZonedDateTime
+}
+
+/**
+ * The DepartmentManager entity.
+ * @author juan.caicedo
+ */
+entity DepartmentManager {
+    
+    fromDate ZonedDateTime required
+    toDate ZonedDateTime
+}
+
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+    Employee{salary} to Salary{employee}
+    Employee{title} to Title{employee}
+    Employee{departmentEmployee} to DepartmentEmployee{employee}
+    Employee{departmentManader} to DepartmentManager{employee}
+    Department{departmentEmployee} to DepartmentEmployee{department}
+    Department{departmentManader} to DepartmentManager{department}
+}

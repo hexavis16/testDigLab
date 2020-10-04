@@ -1,0 +1,30 @@
+{
+  "testDigLabApp": {
+    "employee": {
+      "home": {
+        "title": "Empleados",
+        "createLabel": "Crear nuevo empleado",
+        "createOrEditLabel": "Crear o editar empleado",
+        "notFound": "Ningún empleado encontrado"
+      },
+      "created": "Un nuevo empleado ha sido creado con el identificador {{ param }}",
+      "updated": "Un empleado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un empleado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el empleado {{ id }}?"
+      },
+      "detail": {
+        "title": "Empleado"
+      },
+      "names": "Nombres",
+      "lastNames": "Apellidos",
+      "gender": "Genero",
+      "birthDate": "Fecha de nacimiento",
+      "hireDate": "Fecha de contratación",
+      "salary": "Salario",
+      "title": "Titulo",
+      "departmentEmployee": "Empleados por departamento",
+      "departmentManader": "Jefes por departamento"
+    }
+  }
+}

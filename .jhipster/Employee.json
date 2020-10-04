@@ -1,0 +1,84 @@
+{
+  "name": "Employee",
+  "fields": [
+    {
+      "fieldName": "names",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "lastNames",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "hireDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "salary",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "salary"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "title",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "title"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "departmentEmployee",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "departmentEmployee"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "departmentManager",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "departmentManader"
+    }
+  ],
+  "changelogDate": "20201003233347",
+  "javadoc": "The employee entity.\\n@author juan.caicedo",
+  "entityTableName": "employee",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

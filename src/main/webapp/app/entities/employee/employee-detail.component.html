@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="testDigLabApp.employee.detail.title">Employee</span> {{ employee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testDigLabApp.employee.names">Names</span></dt>
+                <dd>
+                    <span>{{ employee.names }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.employee.lastNames">Last Names</span></dt>
+                <dd>
+                    <span>{{ employee.lastNames }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.employee.gender">Gender</span></dt>
+                <dd>
+                    <span>{{ employee.gender }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.employee.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{ employee.birthDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.employee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ employee.hireDate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

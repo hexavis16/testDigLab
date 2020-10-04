@@ -1,0 +1,24 @@
+{
+  "testDigLabApp": {
+    "department": {
+      "home": {
+        "title": "Departamentos",
+        "createLabel": "Crear nuevo departamento",
+        "createOrEditLabel": "Crear o editar departamento",
+        "notFound": "Ningún departamento encontrado"
+      },
+      "created": "Un nuevo departamento ha sido creado con el identificador {{ param }}",
+      "updated": "Un departamento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un departamento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el departamento {{ id }}?"
+      },
+      "detail": {
+        "title": "departamento"
+      },
+      "name": "Nombre",
+      "departmentEmployee": "Empleados por departamento",
+      "departmentManader": "Jefe por departamento"
+    }
+  }
+}

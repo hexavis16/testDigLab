@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="salary">
+            <h2><span jhiTranslate="testDigLabApp.salary.detail.title">Salary</span> {{ salary.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testDigLabApp.salary.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ salary.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.salary.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ salary.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.salary.toDate">To Date</span></dt>
+                <dd>
+                    <span>{{ salary.toDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.salary.employee">Employee</span></dt>
+                <dd>
+                    <div *ngIf="salary.employee">
+                        <a [routerLink]="['/employee', salary.employee?.id, 'view']">{{ salary.employee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/salary', salary.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

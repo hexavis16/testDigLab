@@ -1,0 +1,25 @@
+{
+  "testDigLabApp": {
+    "title": {
+      "home": {
+        "title": "Titulo",
+        "createLabel": "Crear nuevo titulo",
+        "createOrEditLabel": "Crear o editar titulo",
+        "notFound": "Ningún titulo encontrado"
+      },
+      "created": "Un nuevo titulo ha sido creado con el identificador {{ param }}",
+      "updated": "Un titulo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un titulo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el titulo {{ id }}?"
+      },
+      "detail": {
+        "title": "Titulo"
+      },
+      "title": "Titulo",
+      "fromDate": "Desde",
+      "toDate": "Hasta",
+      "employee": "Empleado"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="title">
+            <h2><span jhiTranslate="testDigLabApp.title.detail.title">Title</span> {{ title.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testDigLabApp.title.title">Title</span></dt>
+                <dd>
+                    <span>{{ title.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.title.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ title.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.title.toDate">To Date</span></dt>
+                <dd>
+                    <span>{{ title.toDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testDigLabApp.title.employee">Employee</span></dt>
+                <dd>
+                    <div *ngIf="title.employee">
+                        <a [routerLink]="['/employee', title.employee?.id, 'view']">{{ title.employee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/title', title.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

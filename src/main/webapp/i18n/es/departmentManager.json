@@ -1,0 +1,25 @@
+{
+  "testDigLabApp": {
+    "departmentManager": {
+      "home": {
+        "title": "Jefes por departamento",
+        "createLabel": "Crear nuevo jefe para departamento",
+        "createOrEditLabel": "Crear o editar jefe de departamento",
+        "notFound": "Ningún jefe de departamento encontrado"
+      },
+      "created": "Un nuevo jefe de departamentor ha sido creado con el identificador {{ param }}",
+      "updated": "Un jefe de departamento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un jefe de departamento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar jefe de departamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Jefe de departamento"
+      },
+      "fromDate": "Desde",
+      "toDate": "Hasta",
+      "employee": "Empleado",
+      "department": "Departamento"
+    }
+  }
+}

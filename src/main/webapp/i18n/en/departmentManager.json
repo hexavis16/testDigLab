@@ -1,0 +1,25 @@
+{
+  "testDigLabApp": {
+    "departmentManager": {
+      "home": {
+        "title": "Department Managers",
+        "createLabel": "Create a new Department Manager",
+        "createOrEditLabel": "Create or edit a Department Manager",
+        "notFound": "No Department Managers found"
+      },
+      "created": "A new Department Manager is created with identifier {{ param }}",
+      "updated": "A Department Manager is updated with identifier {{ param }}",
+      "deleted": "A Department Manager is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Department Manager {{ id }}?"
+      },
+      "detail": {
+        "title": "Department Manager"
+      },
+      "fromDate": "From Date",
+      "toDate": "To Date",
+      "employee": "Employee",
+      "department": "Department"
+    }
+  }
+}

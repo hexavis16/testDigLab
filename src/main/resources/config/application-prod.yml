@@ -33,9 +33,9 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/testDigLab
-    username: testDigLab
-    password:
+    url: jdbc:postgresql://localhost:5433/testDigLab
+    username: postgres
+    password: admin
     hikari:
       poolName: Hikari
       auto-commit: false
