@@ -25,7 +25,7 @@ export class TitleUpdateComponent implements OnInit {
     title: [null, [Validators.required, Validators.maxLength(50)]],
     fromDate: [null, [Validators.required]],
     toDate: [],
-    employee: [],
+    employee: [null, Validators.required],
   });
 
   constructor(

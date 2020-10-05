@@ -3,11 +3,11 @@
     "departmentManager": {
       "home": {
         "title": "Jefes por departamento",
-        "createLabel": "Crear nuevo jefe para departamento",
+        "createLabel": "Crear nuevo jefe de departamento",
         "createOrEditLabel": "Crear o editar jefe de departamento",
         "notFound": "Ningún jefe de departamento encontrado"
       },
-      "created": "Un nuevo jefe de departamentor ha sido creado con el identificador {{ param }}",
+      "created": "Un nuevo jefe de departamento ha sido creado con el identificador {{ param }}",
       "updated": "Un jefe de departamento ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un jefe de departamento ha sido eliminado con el identificador {{ param }}",
       "delete": {

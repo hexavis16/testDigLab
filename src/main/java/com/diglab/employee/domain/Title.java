@@ -36,7 +36,8 @@ public class Title implements Serializable {
     @Column(name = "to_date")
     private ZonedDateTime toDate;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "titles", allowSetters = true)
     private Employee employee;
 

@@ -7,8 +7,6 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * The employee entity.\n@author juan.caicedo
@@ -47,18 +45,6 @@ public class Employee implements Serializable {
     @NotNull
     @Column(name = "hire_date", nullable = false)
     private ZonedDateTime hireDate;
-
-    @OneToMany(mappedBy = "employee")
-    private Set<Salary> salaries = new HashSet<>();
-
-    @OneToMany(mappedBy = "employee")
-    private Set<Title> titles = new HashSet<>();
-
-    @OneToMany(mappedBy = "employee")
-    private Set<DepartmentEmployee> departmentEmployees = new HashSet<>();
-
-    @OneToMany(mappedBy = "employee")
-    private Set<DepartmentManager> departmentManaders = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -132,106 +118,6 @@ public class Employee implements Serializable {
 
     public void setHireDate(ZonedDateTime hireDate) {
         this.hireDate = hireDate;
-    }
-
-    public Set<Salary> getSalaries() {
-        return salaries;
-    }
-
-    public Employee salaries(Set<Salary> salaries) {
-        this.salaries = salaries;
-        return this;
-    }
-
-    public Employee addSalary(Salary salary) {
-        this.salaries.add(salary);
-        salary.setEmployee(this);
-        return this;
-    }
-
-    public Employee removeSalary(Salary salary) {
-        this.salaries.remove(salary);
-        salary.setEmployee(null);
-        return this;
-    }
-
-    public void setSalaries(Set<Salary> salaries) {
-        this.salaries = salaries;
-    }
-
-    public Set<Title> getTitles() {
-        return titles;
-    }
-
-    public Employee titles(Set<Title> titles) {
-        this.titles = titles;
-        return this;
-    }
-
-    public Employee addTitle(Title title) {
-        this.titles.add(title);
-        title.setEmployee(this);
-        return this;
-    }
-
-    public Employee removeTitle(Title title) {
-        this.titles.remove(title);
-        title.setEmployee(null);
-        return this;
-    }
-
-    public void setTitles(Set<Title> titles) {
-        this.titles = titles;
-    }
-
-    public Set<DepartmentEmployee> getDepartmentEmployees() {
-        return departmentEmployees;
-    }
-
-    public Employee departmentEmployees(Set<DepartmentEmployee> departmentEmployees) {
-        this.departmentEmployees = departmentEmployees;
-        return this;
-    }
-
-    public Employee addDepartmentEmployee(DepartmentEmployee departmentEmployee) {
-        this.departmentEmployees.add(departmentEmployee);
-        departmentEmployee.setEmployee(this);
-        return this;
-    }
-
-    public Employee removeDepartmentEmployee(DepartmentEmployee departmentEmployee) {
-        this.departmentEmployees.remove(departmentEmployee);
-        departmentEmployee.setEmployee(null);
-        return this;
-    }
-
-    public void setDepartmentEmployees(Set<DepartmentEmployee> departmentEmployees) {
-        this.departmentEmployees = departmentEmployees;
-    }
-
-    public Set<DepartmentManager> getDepartmentManaders() {
-        return departmentManaders;
-    }
-
-    public Employee departmentManaders(Set<DepartmentManager> departmentManagers) {
-        this.departmentManaders = departmentManagers;
-        return this;
-    }
-
-    public Employee addDepartmentManader(DepartmentManager departmentManager) {
-        this.departmentManaders.add(departmentManager);
-        departmentManager.setEmployee(this);
-        return this;
-    }
-
-    public Employee removeDepartmentManader(DepartmentManager departmentManager) {
-        this.departmentManaders.remove(departmentManager);
-        departmentManager.setEmployee(null);
-        return this;
-    }
-
-    public void setDepartmentManaders(Set<DepartmentManager> departmentManagers) {
-        this.departmentManaders = departmentManagers;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

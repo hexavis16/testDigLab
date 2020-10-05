@@ -43,32 +43,7 @@
       ]
     }
   ],
-  "relationships": [
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "salary",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "salary"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "title",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "title"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "departmentEmployee",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "departmentEmployee"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "departmentManager",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "departmentManader"
-    }
-  ],
+  "relationships": [],
   "changelogDate": "20201003233347",
   "javadoc": "The employee entity.\\n@author juan.caicedo",
   "entityTableName": "employee",

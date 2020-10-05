@@ -2,6 +2,7 @@ package com.diglab.employee.web.rest;
 
 import com.diglab.employee.TestDigLabApp;
 import com.diglab.employee.domain.Title;
+import com.diglab.employee.domain.Employee;
 import com.diglab.employee.repository.TitleRepository;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -65,6 +66,16 @@ public class TitleResourceIT {
             .title(DEFAULT_TITLE)
             .fromDate(DEFAULT_FROM_DATE)
             .toDate(DEFAULT_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        title.setEmployee(employee);
         return title;
     }
     /**
@@ -78,6 +89,16 @@ public class TitleResourceIT {
             .title(UPDATED_TITLE)
             .fromDate(UPDATED_FROM_DATE)
             .toDate(UPDATED_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createUpdatedEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        title.setEmployee(employee);
         return title;
     }
 

@@ -20,11 +20,7 @@
       "lastNames": "Apellidos",
       "gender": "Genero",
       "birthDate": "Fecha de nacimiento",
-      "hireDate": "Fecha de contratación",
-      "salary": "Salario",
-      "title": "Titulo",
-      "departmentEmployee": "Empleados por departamento",
-      "departmentManader": "Jefes por departamento"
+      "hireDate": "Fecha de contratación"
     }
   }
 }

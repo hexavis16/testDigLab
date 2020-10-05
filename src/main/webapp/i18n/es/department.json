@@ -14,11 +14,9 @@
         "question": "¿Seguro que quiere eliminar el departamento {{ id }}?"
       },
       "detail": {
-        "title": "departamento"
+        "title": "Departamento"
       },
-      "name": "Nombre",
-      "departmentEmployee": "Empleados por departamento",
-      "departmentManader": "Jefe por departamento"
+      "name": "Nombre"
     }
   }
 }

@@ -29,8 +29,8 @@ export class DepartmentManagerUpdateComponent implements OnInit {
     id: [],
     fromDate: [null, [Validators.required]],
     toDate: [],
-    employee: [],
-    department: [],
+    employee: [null, Validators.required],
+    department: [null, Validators.required],
   });
 
   constructor(

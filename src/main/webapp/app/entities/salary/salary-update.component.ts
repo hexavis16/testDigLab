@@ -25,7 +25,7 @@ export class SalaryUpdateComponent implements OnInit {
     amount: [null, [Validators.required]],
     fromDate: [null, [Validators.required]],
     toDate: [],
-    employee: [],
+    employee: [null, Validators.required],
   });
 
   constructor(

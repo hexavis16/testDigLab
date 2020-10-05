@@ -1,9 +1,9 @@
-import { browser, ExpectedConditions as ec, protractor, promise } from 'protractor';
+import { browser, ExpectedConditions as ec /* , protractor, promise */ } from 'protractor';
 import { NavBarPage, SignInPage } from '../../page-objects/jhi-page-objects';
 
 import {
   DepartmentEmployeeComponentsPage,
-  DepartmentEmployeeDeleteDialog,
+  /* DepartmentEmployeeDeleteDialog, */
   DepartmentEmployeeUpdatePage,
 } from './department-employee.page-object';
 
@@ -14,7 +14,7 @@ describe('DepartmentEmployee e2e test', () => {
   let signInPage: SignInPage;
   let departmentEmployeeComponentsPage: DepartmentEmployeeComponentsPage;
   let departmentEmployeeUpdatePage: DepartmentEmployeeUpdatePage;
-  let departmentEmployeeDeleteDialog: DepartmentEmployeeDeleteDialog;
+  /* let departmentEmployeeDeleteDialog: DepartmentEmployeeDeleteDialog; */
 
   before(async () => {
     await browser.get('/');
@@ -42,46 +42,38 @@ describe('DepartmentEmployee e2e test', () => {
     await departmentEmployeeUpdatePage.cancel();
   });
 
-  it('should create and save DepartmentEmployees', async () => {
-    const nbButtonsBeforeCreate = await departmentEmployeeComponentsPage.countDeleteButtons();
+  /* it('should create and save DepartmentEmployees', async () => {
+        const nbButtonsBeforeCreate = await departmentEmployeeComponentsPage.countDeleteButtons();
 
-    await departmentEmployeeComponentsPage.clickOnCreateButton();
+        await departmentEmployeeComponentsPage.clickOnCreateButton();
 
-    await promise.all([
-      departmentEmployeeUpdatePage.setFromDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      departmentEmployeeUpdatePage.setToDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      departmentEmployeeUpdatePage.employeeSelectLastOption(),
-      departmentEmployeeUpdatePage.departmentSelectLastOption(),
-    ]);
+        await promise.all([
+            departmentEmployeeUpdatePage.setFromDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            departmentEmployeeUpdatePage.setToDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            departmentEmployeeUpdatePage.employeeSelectLastOption(),
+            departmentEmployeeUpdatePage.departmentSelectLastOption(),
+        ]);
 
-    expect(await departmentEmployeeUpdatePage.getFromDateInput()).to.contain(
-      '2001-01-01T02:30',
-      'Expected fromDate value to be equals to 2000-12-31'
-    );
-    expect(await departmentEmployeeUpdatePage.getToDateInput()).to.contain(
-      '2001-01-01T02:30',
-      'Expected toDate value to be equals to 2000-12-31'
-    );
+        expect(await departmentEmployeeUpdatePage.getFromDateInput()).to.contain('2001-01-01T02:30', 'Expected fromDate value to be equals to 2000-12-31');
+        expect(await departmentEmployeeUpdatePage.getToDateInput()).to.contain('2001-01-01T02:30', 'Expected toDate value to be equals to 2000-12-31');
 
-    await departmentEmployeeUpdatePage.save();
-    expect(await departmentEmployeeUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
+        await departmentEmployeeUpdatePage.save();
+        expect(await departmentEmployeeUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 
-    expect(await departmentEmployeeComponentsPage.countDeleteButtons()).to.eq(
-      nbButtonsBeforeCreate + 1,
-      'Expected one more entry in the table'
-    );
-  });
+        expect(await departmentEmployeeComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
+    }); */
 
-  it('should delete last DepartmentEmployee', async () => {
-    const nbButtonsBeforeDelete = await departmentEmployeeComponentsPage.countDeleteButtons();
-    await departmentEmployeeComponentsPage.clickOnLastDeleteButton();
+  /* it('should delete last DepartmentEmployee', async () => {
+        const nbButtonsBeforeDelete = await departmentEmployeeComponentsPage.countDeleteButtons();
+        await departmentEmployeeComponentsPage.clickOnLastDeleteButton();
 
-    departmentEmployeeDeleteDialog = new DepartmentEmployeeDeleteDialog();
-    expect(await departmentEmployeeDeleteDialog.getDialogTitle()).to.eq('testDigLabApp.departmentEmployee.delete.question');
-    await departmentEmployeeDeleteDialog.clickOnConfirmButton();
+        departmentEmployeeDeleteDialog = new DepartmentEmployeeDeleteDialog();
+        expect(await departmentEmployeeDeleteDialog.getDialogTitle())
+            .to.eq('testDigLabApp.departmentEmployee.delete.question');
+        await departmentEmployeeDeleteDialog.clickOnConfirmButton();
 
-    expect(await departmentEmployeeComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
-  });
+        expect(await departmentEmployeeComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
+    }); */
 
   after(async () => {
     await navBarPage.autoSignOut();

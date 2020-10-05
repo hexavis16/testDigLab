@@ -35,7 +35,8 @@ public class Salary implements Serializable {
     @Column(name = "to_date")
     private ZonedDateTime toDate;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "salaries", allowSetters = true)
     private Employee employee;
 

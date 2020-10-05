@@ -17,14 +17,16 @@
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "employee",
-      "otherEntityRelationshipName": "departmentManader",
+      "otherEntityRelationshipName": "departmentManager",
+      "relationshipValidateRules": "required",
       "relationshipName": "employee",
       "otherEntityField": "id"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "department",
-      "otherEntityRelationshipName": "departmentManader",
+      "otherEntityRelationshipName": "departmentManager",
+      "relationshipValidateRules": "required",
       "relationshipName": "department",
       "otherEntityField": "id"
     }

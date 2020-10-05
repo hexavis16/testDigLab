@@ -31,12 +31,14 @@ public class DepartmentManager implements Serializable {
     @Column(name = "to_date")
     private ZonedDateTime toDate;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "departmentManaders", allowSetters = true)
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "departmentManagers", allowSetters = true)
     private Employee employee;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "departmentManaders", allowSetters = true)
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "departmentManagers", allowSetters = true)
     private Department department;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

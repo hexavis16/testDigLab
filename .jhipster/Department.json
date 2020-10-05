@@ -9,20 +9,7 @@
       ]
     }
   ],
-  "relationships": [
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "departmentEmployee",
-      "otherEntityRelationshipName": "department",
-      "relationshipName": "departmentEmployee"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "departmentManager",
-      "otherEntityRelationshipName": "department",
-      "relationshipName": "departmentManader"
-    }
-  ],
+  "relationships": [],
   "changelogDate": "20201003233447",
   "javadoc": "The Department entity.\\n@author juan.caicedo",
   "entityTableName": "department",

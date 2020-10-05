@@ -23,7 +23,7 @@
                 <dt><span jhiTranslate="testDigLabApp.salary.employee">Employee</span></dt>
                 <dd>
                     <div *ngIf="salary.employee">
-                        <a [routerLink]="['/employee', salary.employee?.id, 'view']">{{ salary.employee?.id }}</a>
+                        <a [routerLink]="['/employee', salary.employee?.id, 'view']">{{ salary.employee?.names }} {{ salary.employee?.lastNames }}</a>
                     </div>
                 </dd>
             </dl>

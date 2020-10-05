@@ -38,17 +38,29 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="testDigLabApp.departmentManager.employee" for="field_employee">Employee</label>
                     <select class="form-control" id="field_employee" name="employee" formControlName="employee">
-                        <option [ngValue]="null"></option>
+                        <option *ngIf="!editForm.get('employee')!.value" [ngValue]="null" selected></option>
                         <option [ngValue]="employeeOption.id === editForm.get('employee')!.value?.id ? editForm.get('employee')!.value : employeeOption" *ngFor="let employeeOption of employees; trackBy: trackById">{{ employeeOption.names }} {{ employeeOption.lastNames }}</option>
                     </select>
+                </div>
+                <div *ngIf="editForm.get('employee')!.invalid && (editForm.get('employee')!.dirty || editForm.get('employee')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('employee')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
                 </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="testDigLabApp.departmentManager.department" for="field_department">Department</label>
                     <select class="form-control" id="field_department" name="department" formControlName="department">
-                        <option [ngValue]="null"></option>
+                        <option *ngIf="!editForm.get('department')!.value" [ngValue]="null" selected></option>
                         <option [ngValue]="departmentOption.id === editForm.get('department')!.value?.id ? editForm.get('department')!.value : departmentOption" *ngFor="let departmentOption of departments; trackBy: trackById">{{ departmentOption.name }}</option>
                     </select>
+                </div>
+                <div *ngIf="editForm.get('department')!.invalid && (editForm.get('department')!.dirty || editForm.get('department')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('department')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
                 </div>
             </div>
 

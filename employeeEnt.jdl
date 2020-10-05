@@ -64,12 +64,24 @@ entity DepartmentManager {
 
 /**
  * One to many relationship.
- */
+ 
 relationship OneToMany {
-    Employee{salary} to Salary{employee}
-    Employee{title} to Title{employee}
-    Employee{departmentEmployee} to DepartmentEmployee{employee}
-    Employee{departmentManader} to DepartmentManager{employee}
-    Department{departmentEmployee} to DepartmentEmployee{department}
-    Department{departmentManader} to DepartmentManager{department}
+    Employee{salary} to Salary{employee required}
+    Employee{title} to Title{employee required}
+    Employee{departmentEmployee} to DepartmentEmployee{employee required}
+    Employee{departmentManader} to DepartmentManager{employee required}
+    Department{departmentEmployee} to DepartmentEmployee{department required}
+    Department{departmentManader} to DepartmentManager{department required}
+}*/
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    Salary{employee required} to Employee
+    Title{employee required} to Employee
+    DepartmentEmployee{employee required} to Employee
+    DepartmentManager{employee required} to Employee
+    DepartmentEmployee{department required} to Department
+    DepartmentManager{department required} to Department
 }

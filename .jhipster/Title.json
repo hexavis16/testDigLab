@@ -27,6 +27,7 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "employee",
       "otherEntityRelationshipName": "title",
+      "relationshipValidateRules": "required",
       "relationshipName": "employee",
       "otherEntityField": "id"
     }

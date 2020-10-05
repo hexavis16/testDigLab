@@ -2,7 +2,7 @@
   "testDigLabApp": {
     "title": {
       "home": {
-        "title": "Titulo",
+        "title": "Titulos",
         "createLabel": "Crear nuevo titulo",
         "createOrEditLabel": "Crear o editar titulo",
         "notFound": "Ningún titulo encontrado"

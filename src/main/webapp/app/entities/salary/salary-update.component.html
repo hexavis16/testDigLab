@@ -54,9 +54,15 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="testDigLabApp.salary.employee" for="field_employee">Employee</label>
                     <select class="form-control" id="field_employee" name="employee" formControlName="employee">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="employeeOption.id === editForm.get('employee')!.value?.id ? editForm.get('employee')!.value : employeeOption" *ngFor="let employeeOption of employees; trackBy: trackById">{{ employeeOption.id }}</option>
+                        <option *ngIf="!editForm.get('employee')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="employeeOption.id === editForm.get('employee')!.value?.id ? editForm.get('employee')!.value : employeeOption" *ngFor="let employeeOption of employees; trackBy: trackById">{{ employeeOption.names }} {{ employeeOption.lastNames }}</option>
                     </select>
+                </div>
+                <div *ngIf="editForm.get('employee')!.invalid && (editForm.get('employee')!.dirty || editForm.get('employee')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('employee')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
                 </div>
             </div>
 

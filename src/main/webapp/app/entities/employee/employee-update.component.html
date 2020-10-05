@@ -45,8 +45,13 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="testDigLabApp.employee.gender" for="field_gender">Gender</label>
-                    <input type="text" class="form-control" name="gender" id="field_gender"
-                           formControlName="gender"/>
+                    <!--input type="text" class="form-control" name="gender" id="field_gender"
+                           formControlName="gender"/-->
+                    <select class="form-control" name="gender" id="field_gender"
+                    formControlName="gender">
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
                     <div *ngIf="editForm.get('gender')!.invalid && (editForm.get('gender')!.dirty || editForm.get('gender')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('gender')?.errors?.required" jhiTranslate="entity.validation.required">

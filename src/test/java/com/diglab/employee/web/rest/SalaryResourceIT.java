@@ -2,6 +2,7 @@ package com.diglab.employee.web.rest;
 
 import com.diglab.employee.TestDigLabApp;
 import com.diglab.employee.domain.Salary;
+import com.diglab.employee.domain.Employee;
 import com.diglab.employee.repository.SalaryRepository;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -65,6 +66,16 @@ public class SalaryResourceIT {
             .amount(DEFAULT_AMOUNT)
             .fromDate(DEFAULT_FROM_DATE)
             .toDate(DEFAULT_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        salary.setEmployee(employee);
         return salary;
     }
     /**
@@ -78,6 +89,16 @@ public class SalaryResourceIT {
             .amount(UPDATED_AMOUNT)
             .fromDate(UPDATED_FROM_DATE)
             .toDate(UPDATED_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createUpdatedEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        salary.setEmployee(employee);
         return salary;
     }
 

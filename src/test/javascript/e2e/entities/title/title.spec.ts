@@ -1,7 +1,11 @@
-import { browser, ExpectedConditions as ec, protractor, promise } from 'protractor';
+import { browser, ExpectedConditions as ec /* , protractor, promise */ } from 'protractor';
 import { NavBarPage, SignInPage } from '../../page-objects/jhi-page-objects';
 
-import { TitleComponentsPage, TitleDeleteDialog, TitleUpdatePage } from './title.page-object';
+import {
+  TitleComponentsPage,
+  /* TitleDeleteDialog, */
+  TitleUpdatePage,
+} from './title.page-object';
 
 const expect = chai.expect;
 
@@ -10,7 +14,7 @@ describe('Title e2e test', () => {
   let signInPage: SignInPage;
   let titleComponentsPage: TitleComponentsPage;
   let titleUpdatePage: TitleUpdatePage;
-  let titleDeleteDialog: TitleDeleteDialog;
+  /* let titleDeleteDialog: TitleDeleteDialog; */
 
   before(async () => {
     await browser.get('/');
@@ -35,38 +39,39 @@ describe('Title e2e test', () => {
     await titleUpdatePage.cancel();
   });
 
-  it('should create and save Titles', async () => {
-    const nbButtonsBeforeCreate = await titleComponentsPage.countDeleteButtons();
+  /* it('should create and save Titles', async () => {
+        const nbButtonsBeforeCreate = await titleComponentsPage.countDeleteButtons();
 
-    await titleComponentsPage.clickOnCreateButton();
+        await titleComponentsPage.clickOnCreateButton();
 
-    await promise.all([
-      titleUpdatePage.setTitleInput('title'),
-      titleUpdatePage.setFromDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      titleUpdatePage.setToDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      titleUpdatePage.employeeSelectLastOption(),
-    ]);
+        await promise.all([
+            titleUpdatePage.setTitleInput('title'),
+            titleUpdatePage.setFromDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            titleUpdatePage.setToDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            titleUpdatePage.employeeSelectLastOption(),
+        ]);
 
-    expect(await titleUpdatePage.getTitleInput()).to.eq('title', 'Expected Title value to be equals to title');
-    expect(await titleUpdatePage.getFromDateInput()).to.contain('2001-01-01T02:30', 'Expected fromDate value to be equals to 2000-12-31');
-    expect(await titleUpdatePage.getToDateInput()).to.contain('2001-01-01T02:30', 'Expected toDate value to be equals to 2000-12-31');
+        expect(await titleUpdatePage.getTitleInput()).to.eq('title', 'Expected Title value to be equals to title');
+        expect(await titleUpdatePage.getFromDateInput()).to.contain('2001-01-01T02:30', 'Expected fromDate value to be equals to 2000-12-31');
+        expect(await titleUpdatePage.getToDateInput()).to.contain('2001-01-01T02:30', 'Expected toDate value to be equals to 2000-12-31');
 
-    await titleUpdatePage.save();
-    expect(await titleUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
+        await titleUpdatePage.save();
+        expect(await titleUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 
-    expect(await titleComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
-  });
+        expect(await titleComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
+    }); */
 
-  it('should delete last Title', async () => {
-    const nbButtonsBeforeDelete = await titleComponentsPage.countDeleteButtons();
-    await titleComponentsPage.clickOnLastDeleteButton();
+  /* it('should delete last Title', async () => {
+        const nbButtonsBeforeDelete = await titleComponentsPage.countDeleteButtons();
+        await titleComponentsPage.clickOnLastDeleteButton();
 
-    titleDeleteDialog = new TitleDeleteDialog();
-    expect(await titleDeleteDialog.getDialogTitle()).to.eq('testDigLabApp.title.delete.question');
-    await titleDeleteDialog.clickOnConfirmButton();
+        titleDeleteDialog = new TitleDeleteDialog();
+        expect(await titleDeleteDialog.getDialogTitle())
+            .to.eq('testDigLabApp.title.delete.question');
+        await titleDeleteDialog.clickOnConfirmButton();
 
-    expect(await titleComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
-  });
+        expect(await titleComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
+    }); */
 
   after(async () => {
     await navBarPage.autoSignOut();

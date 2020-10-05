@@ -14,7 +14,7 @@
         "question": "¿Seguro que quiere eliminar el salario {{ id }}?"
       },
       "detail": {
-        "title": "salario"
+        "title": "Salario"
       },
       "amount": "Valor",
       "fromDate": "Desde",

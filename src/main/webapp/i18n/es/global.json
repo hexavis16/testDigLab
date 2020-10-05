@@ -1,18 +1,18 @@
 {
   "global": {
-    "title": "TestDigLab",
+    "title": "Prueba Laboratorio Digital",
     "browsehappy": "Está usando un navegador <strong>no actualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=es\">actualice su navegador</a> para mejorar su experiencia.",
     "menu": {
       "home": "Inicio",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "employee": "Employee",
-        "department": "Department",
-        "salary": "Salary",
-        "title": "Title",
-        "departmentEmployee": "Department Employee",
-        "departmentManager": "Department Manager",
+        "employee": "Empleados",
+        "department": "Departamentos",
+        "salary": "Salarios",
+        "title": "Titulos",
+        "departmentEmployee": "Empleados por departamento",
+        "departmentManager": "Jefes por departamento",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -141,5 +141,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Pie de página"
+  "footer": "Prueba técnica Laboratorio digital, Banco de Occidente - Juan Camilo Caicedo Sepulveda"
 }

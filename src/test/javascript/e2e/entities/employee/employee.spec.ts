@@ -43,14 +43,13 @@ describe('Employee e2e test', () => {
     await promise.all([
       employeeUpdatePage.setNamesInput('names'),
       employeeUpdatePage.setLastNamesInput('lastNames'),
-      employeeUpdatePage.setGenderInput('gender'),
+      employeeUpdatePage.genderSelectLastOption(),
       employeeUpdatePage.setBirthDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
       employeeUpdatePage.setHireDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
     ]);
 
     expect(await employeeUpdatePage.getNamesInput()).to.eq('names', 'Expected Names value to be equals to names');
     expect(await employeeUpdatePage.getLastNamesInput()).to.eq('lastNames', 'Expected LastNames value to be equals to lastNames');
-    expect(await employeeUpdatePage.getGenderInput()).to.eq('gender', 'Expected Gender value to be equals to gender');
     expect(await employeeUpdatePage.getBirthDateInput()).to.contain(
       '2001-01-01T02:30',
       'Expected birthDate value to be equals to 2000-12-31'

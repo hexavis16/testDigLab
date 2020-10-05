@@ -87,6 +87,10 @@ export class EmployeeUpdatePage {
     await this.cancelButton.click();
   }
 
+  async genderSelectLastOption(): Promise<void> {
+    await this.genderInput.all(by.tagName('option')).last().click();
+  }
+
   getSaveButton(): ElementFinder {
     return this.saveButton;
   }

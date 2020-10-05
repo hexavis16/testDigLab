@@ -38,7 +38,7 @@
                     <td>{{ salary.toDate | date:'medium' }}</td>
                     <td>
                         <div *ngIf="salary.employee">
-                            <a [routerLink]="['/employee', salary.employee?.id, 'view']" >{{ salary.employee?.id }}</a>
+                            <a [routerLink]="['/employee', salary.employee?.id, 'view']" >{{ salary.employee?.names }} {{ salary.employee?.lastNames }}</a>
                         </div>
                     </td>
                     <td class="text-right">

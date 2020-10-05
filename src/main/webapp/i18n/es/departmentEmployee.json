@@ -2,24 +2,24 @@
   "testDigLabApp": {
     "departmentEmployee": {
       "home": {
-        "title": "Department Employees",
-        "createLabel": "Crear nuevo Department Employee",
-        "createOrEditLabel": "Crear o editar Department Employee",
-        "notFound": "Ningún Department Employees encontrado"
+        "title": "Empleados por departamento",
+        "createLabel": "Crear nuevo empleado para el departamento",
+        "createOrEditLabel": "Crear o editar empleado del departamento",
+        "notFound": "Ningún Department empleado de departamento encontrado"
       },
-      "created": "Un nuevo Department Employee ha sido creado con el identificador {{ param }}",
-      "updated": "Un Department Employee ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Department Employee ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo empleado de departamento ha sido creado con el identificador {{ param }}",
+      "updated": "Un empleado de departamento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un empleado de departamento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Department Employee {{ id }}?"
+        "question": "¿Seguro que quiere eliminar empleado de departamento {{ id }}?"
       },
       "detail": {
-        "title": "Department Employee"
+        "title": "Empleado de departamento"
       },
-      "fromDate": "From Date",
-      "toDate": "To Date",
-      "employee": "Employee",
-      "department": "Department"
+      "fromDate": "Desde",
+      "toDate": "Hasta",
+      "employee": "Empleado",
+      "department": "Departamento"
     }
   }
 }

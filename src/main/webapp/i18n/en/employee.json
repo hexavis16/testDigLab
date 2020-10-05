@@ -20,11 +20,7 @@
       "lastNames": "Last Names",
       "gender": "Gender",
       "birthDate": "Birth Date",
-      "hireDate": "Hire Date",
-      "salary": "Salary",
-      "title": "Title",
-      "departmentEmployee": "Department Employee",
-      "departmentManader": "Department Manader"
+      "hireDate": "Hire Date"
     }
   }
 }

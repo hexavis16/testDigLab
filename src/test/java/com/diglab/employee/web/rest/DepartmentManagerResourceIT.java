@@ -2,6 +2,8 @@ package com.diglab.employee.web.rest;
 
 import com.diglab.employee.TestDigLabApp;
 import com.diglab.employee.domain.DepartmentManager;
+import com.diglab.employee.domain.Employee;
+import com.diglab.employee.domain.Department;
 import com.diglab.employee.repository.DepartmentManagerRepository;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -61,6 +63,26 @@ public class DepartmentManagerResourceIT {
         DepartmentManager departmentManager = new DepartmentManager()
             .fromDate(DEFAULT_FROM_DATE)
             .toDate(DEFAULT_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        departmentManager.setEmployee(employee);
+        // Add required entity
+        Department department;
+        if (TestUtil.findAll(em, Department.class).isEmpty()) {
+            department = DepartmentResourceIT.createEntity(em);
+            em.persist(department);
+            em.flush();
+        } else {
+            department = TestUtil.findAll(em, Department.class).get(0);
+        }
+        departmentManager.setDepartment(department);
         return departmentManager;
     }
     /**
@@ -73,6 +95,26 @@ public class DepartmentManagerResourceIT {
         DepartmentManager departmentManager = new DepartmentManager()
             .fromDate(UPDATED_FROM_DATE)
             .toDate(UPDATED_TO_DATE);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createUpdatedEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        departmentManager.setEmployee(employee);
+        // Add required entity
+        Department department;
+        if (TestUtil.findAll(em, Department.class).isEmpty()) {
+            department = DepartmentResourceIT.createUpdatedEntity(em);
+            em.persist(department);
+            em.flush();
+        } else {
+            department = TestUtil.findAll(em, Department.class).get(0);
+        }
+        departmentManager.setDepartment(department);
         return departmentManager;
     }
 
